@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,24 +15,58 @@ import com.damosdesigns.designlab.R;
  * Created by damosdesigns on 6/19/16.
  */
 public class ProjectsAdapter extends RecyclerView.Adapter<ProjectsAdapter.MyViewHolder> {
-   private Project[] mDataset;
+
+    OnItemClickListener mItemClickListener;
+
+    public Project[] getmDataset() {
+        return mDataset;
+    }
+
+    public void setmDataset(Project[] mDataset) {
+        this.mDataset = mDataset;
+    }
+
+    public OnItemClickListener getmItemClickListener() {
+        return mItemClickListener;
+    }
+
+    public void setmItemClickListener(final OnItemClickListener mItemClickListener) {
+        this.mItemClickListener = mItemClickListener;
+    }
+
+    private Project[] mDataset;
 
     public ProjectsAdapter(Project[] myDataset){
         mDataset = myDataset;
     }
 
-    public static class MyViewHolder extends RecyclerView.ViewHolder {
+    public static class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public CardView mCardView;
         public TextView mTextView;
         public ImageView mBackground;
+//        public OnItemClickListener mItemClickListener;
 
 
         public MyViewHolder(View itemView) {
             super(itemView);
             mTextView = (TextView) itemView.findViewById(R.id.project_card_title_text);
             mBackground = (ImageView) itemView.findViewById(R.id.project_card_background);
+//            itemView.setOnClickListener(this);
         }
+
+
+        @Override
+        public void onClick(View v) {
+//            mItemClickListener.onItemClick(v, getPosition()); //OnItemClickListener mItemClickListener;
+        }
+
     }
+
+    public interface OnItemClickListener {
+        public void onItemClick(View view , int position);
+    }
+
+
 
     @Override
     public ProjectsAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -57,3 +92,5 @@ public class ProjectsAdapter extends RecyclerView.Adapter<ProjectsAdapter.MyView
 
 
 }
+
+

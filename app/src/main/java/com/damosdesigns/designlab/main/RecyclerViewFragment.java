@@ -14,8 +14,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.damosdesigns.designlab.R;
+import com.damosdesigns.designlab.main.ProjectsAdapter.OnItemClickListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,5 +57,19 @@ import java.util.Random;
 
             mAdapter = new ProjectsAdapter(listOfProjects);
             recyclerView.setAdapter(mAdapter);
+            recyclerView.addOnItemTouchListener(
+                    new RecyclerItemClickListener(getContext(), new RecyclerItemClickListener.OnItemClickListener() {
+                        @Override public void onItemClick(View view, int position) {
+                            // do whatever
+//                            switch (position){
+//                                case 1:
+//                                    break;
+//                                case 2:
+//                            }
+                            Toast.makeText(getContext(), "Position: " + position + " clicked", Toast.LENGTH_SHORT).show();
+
+                        }
+                    })
+            );
         }
 }
