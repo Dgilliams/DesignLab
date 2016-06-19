@@ -15,9 +15,6 @@ import com.damosdesigns.designlab.R;
  * Created by damosdesigns on 6/19/16.
  */
 public class ProjectsAdapter extends RecyclerView.Adapter<ProjectsAdapter.MyViewHolder> {
-
-    OnItemClickListener mItemClickListener;
-
     public Project[] getmDataset() {
         return mDataset;
     }
@@ -26,45 +23,28 @@ public class ProjectsAdapter extends RecyclerView.Adapter<ProjectsAdapter.MyView
         this.mDataset = mDataset;
     }
 
-    public OnItemClickListener getmItemClickListener() {
-        return mItemClickListener;
-    }
-
-    public void setmItemClickListener(final OnItemClickListener mItemClickListener) {
-        this.mItemClickListener = mItemClickListener;
-    }
-
     private Project[] mDataset;
 
     public ProjectsAdapter(Project[] myDataset){
         mDataset = myDataset;
     }
 
-    public static class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public static class MyViewHolder extends RecyclerView.ViewHolder{
         public CardView mCardView;
         public TextView mTextView;
         public ImageView mBackground;
-//        public OnItemClickListener mItemClickListener;
+        public View mRelativeLayout;
 
 
         public MyViewHolder(View itemView) {
             super(itemView);
             mTextView = (TextView) itemView.findViewById(R.id.project_card_title_text);
             mBackground = (ImageView) itemView.findViewById(R.id.project_card_background);
-//            itemView.setOnClickListener(this);
-        }
-
-
-        @Override
-        public void onClick(View v) {
-//            mItemClickListener.onItemClick(v, getPosition()); //OnItemClickListener mItemClickListener;
+            mRelativeLayout = itemView.findViewById(R.id.project_card_relative_layout);
         }
 
     }
 
-    public interface OnItemClickListener {
-        public void onItemClick(View view , int position);
-    }
 
 
 
@@ -83,6 +63,7 @@ public class ProjectsAdapter extends RecyclerView.Adapter<ProjectsAdapter.MyView
         holder.mTextView.setText(mDataset[i].getmTitle());
         holder.mBackground.setBackgroundColor(mDataset[i].getmBackgroundColor());
         holder.mBackground.setBackground(mDataset[i].getmLogo());
+//        holder.mRelativeLayout.setBackgroundColor(Util.returnRandomMaterialColor());
     }
 
     @Override

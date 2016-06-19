@@ -43,7 +43,7 @@ public class Project {
     }
 
     public void setmLogo(Context context, int  mLogo) {
-        this.mLogo = ContextCompat.getDrawable(context, mLogo);;
+        this.mLogo = ContextCompat.getDrawable(context, mLogo);
     }
 
     public String getmTitle() {

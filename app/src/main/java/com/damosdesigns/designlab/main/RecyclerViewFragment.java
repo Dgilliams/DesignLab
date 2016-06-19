@@ -3,6 +3,7 @@ package com.damosdesigns.designlab.main;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -17,7 +18,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.damosdesigns.designlab.R;
-import com.damosdesigns.designlab.main.ProjectsAdapter.OnItemClickListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -54,20 +54,23 @@ import java.util.Random;
             listOfProjects[1] = cowculator;
             listOfProjects[2] = origin;
 
-
             mAdapter = new ProjectsAdapter(listOfProjects);
             recyclerView.setAdapter(mAdapter);
             recyclerView.addOnItemTouchListener(
                     new RecyclerItemClickListener(getContext(), new RecyclerItemClickListener.OnItemClickListener() {
                         @Override public void onItemClick(View view, int position) {
-                            // do whatever
-//                            switch (position){
-//                                case 1:
-//                                    break;
-//                                case 2:
-//                            }
-                            Toast.makeText(getContext(), "Position: " + position + " clicked", Toast.LENGTH_SHORT).show();
-
+                            switch (position){
+                                case 0:
+                                    //material design business card
+                                    Util.launchPlaystore(getContext(), "com.damosdesigns.damo.material_design_business_card");
+                                    break;
+                                case 1:
+                                    Util.launchPlaystore(getContext(), "com.damosdesigns.cowculatorcalculator");
+                                    break;
+                                case 2:
+                                    Util.launchPlaystore(getContext(), "com.OriginalOrigins.Origin");
+                                    break;
+                            }
                         }
                     })
             );

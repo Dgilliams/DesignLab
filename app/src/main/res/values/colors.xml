@@ -4,6 +4,15 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FFFFFF</color>
 
+
+    <integer-array name="random_material_colors">
+        <item>@color/md_orange_400</item>
+        <item>@color/md_amber_400</item>
+        <item>@color/md_blue_400</item>
+        <item>@color/md_pink_400</item>
+        <item>@color/md_purple_400</item>
+    </integer-array>
+
     <!-- google's material design colors from
     http://www.google.com/design/spec/style/color.html#color-ui-color-palette -->
 

@@ -13,14 +13,16 @@
     app:cardCornerRadius="4dp">
 
     <RelativeLayout
+        android:id="@+id/project_card_relative_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        >
 
         <ImageView
             android:id="@+id/project_card_background"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:background="@color/md_green_300" />
+            android:background="@drawable/damos_white_logo" />
 
         <TextView
             android:id="@+id/project_card_title_text"
