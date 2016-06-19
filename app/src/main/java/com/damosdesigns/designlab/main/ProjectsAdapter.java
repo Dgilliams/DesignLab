@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.damosdesigns.designlab.R;
@@ -22,10 +23,13 @@ public class ProjectsAdapter extends RecyclerView.Adapter<ProjectsAdapter.MyView
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         public CardView mCardView;
         public TextView mTextView;
+        public ImageView mBackground;
+
 
         public MyViewHolder(View itemView) {
             super(itemView);
             mTextView = (TextView) itemView.findViewById(R.id.project_card_title_text);
+            mBackground = (ImageView) itemView.findViewById(R.id.project_card_background);
         }
     }
 
@@ -42,7 +46,8 @@ public class ProjectsAdapter extends RecyclerView.Adapter<ProjectsAdapter.MyView
     @Override
     public void onBindViewHolder(MyViewHolder holder, int i) {
         holder.mTextView.setText(mDataset[i].getmTitle());
-
+        holder.mBackground.setBackgroundColor(mDataset[i].getmBackgroundColor());
+        holder.mBackground.setBackground(mDataset[i].getmLogo());
     }
 
     @Override
