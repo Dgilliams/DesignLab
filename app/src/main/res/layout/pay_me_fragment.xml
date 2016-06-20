@@ -22,11 +22,32 @@
             android:layout_height="wrap_content"
             android:padding="16dp">
 
+            <ImageView
+                android:paddingBottom="16dp"
+                android:paddingEnd="16dp"
+                android:paddingStart="16dp"
+                android:paddingTop="0dp"
+                android:id="@+id/bag_of_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/cash"
+                android:layout_centerHorizontal="true"/>
+
             <TextView
+                android:layout_below="@id/bag_of_money"
                 android:id="@+id/dev_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="This will soon be a tab where you can donate money towards my development efforts. It will also give you access to request a quote from within the app. Hopefully I can work towards an in app ordering system where you can keep track of quotes and receive messages."
+                android:text="This will soon be a tab where you can donate lots of money towards my development efforts.
+
+It will also give you access to request a quote for the following from within the app:
+\n\n
+\n- Consulting
+\n- Android Application Development
+\n- Software Development
+\n- Graphic Design
+\n\n
+I'm working towards an in app ordering system where you can keep track of quotes and receive messages."
                 android:textSize="18sp" />
 
 

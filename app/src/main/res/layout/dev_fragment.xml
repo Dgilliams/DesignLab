@@ -41,7 +41,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/dev_pic"
                 android:text="Damien Gilliams"
-                android:textSize="18sp" />
+                android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/dev_job_title"
@@ -49,53 +49,60 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/dev_name"
                 android:text="Android Developer/ Software Artist"
-                android:textSize="16sp" />
+                android:textSize="18sp" />
 
             <View
                 android:id="@+id/divider_1"
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
                 android:layout_below="@id/dev_job_title"
-                android:background="@color/md_grey_400"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="8dp" />
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/md_grey_400" />
 
             <TextView
                 android:id="@+id/dev_phone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/divider_1"
-                android:text="772-713-1983"/>
+                android:text="772-713-1983"
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/dev_email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
-                android:layout_toRightOf="@id/dev_phone"
                 android:layout_below="@id/divider_1"
-                android:text="DamosDesigns@Gmail.com"/>
+                android:text="DamosDesigns@Gmail.com"
+                android:textSize="18sp" />
+
             <View
                 android:id="@+id/divider_2"
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
                 android:layout_below="@id/dev_email"
-                android:background="@color/md_grey_400"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="8dp" />
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/md_grey_400" />
+
             <TextView
                 android:id="@+id/dev_bio_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/divider_2"
                 android:text="About the Developer"
-                android:textSize="18sp"/>
+                android:textSize="24sp" />
+
             <TextView
                 android:id="@+id/dev_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/dev_bio_title"
-                android:text="@string/dev_description_text"/>
+                android:paddingTop="8dp"
+                android:text="@string/dev_description_text"
+                android:textSize="18sp" />
+
             <View
                 android:id="@+id/divider_3"
                 android:layout_width="match_parent"
