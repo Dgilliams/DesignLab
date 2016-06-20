@@ -1,5 +1,6 @@
 package com.damosdesigns.designlab.main;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -24,4 +25,5 @@ public class Util {
         int[] androidColors = context.getResources().getIntArray(R.array.random_material_colors);
        return androidColors[new Random().nextInt(androidColors.length)];
     }
+
 }

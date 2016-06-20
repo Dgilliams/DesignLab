@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/dev_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:padding="16dp"
+        app:cardBackgroundColor="@color/md_white_1000"
+        app:cardCornerRadius="4dp">
+
+        <RelativeLayout
+            android:id="@+id/dev_card_relative_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/dev_pic"
+                android:layout_width="wrap_content"
+                android:layout_height="400dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:paddingBottom="16dp"
+                android:paddingEnd="16dp"
+                android:paddingStart="16dp"
+                android:paddingTop="0dp"
+                android:src="@drawable/dev_pic" />
+
+            <TextView
+                android:id="@+id/dev_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/dev_pic"
+                android:text="Damien Gilliams"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/dev_job_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/dev_name"
+                android:text="Android Developer/ Software Artist"
+                android:textSize="16sp" />
+
+            <View
+                android:id="@+id/divider_1"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_below="@id/dev_job_title"
+                android:background="@color/md_grey_400"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:id="@+id/dev_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/divider_1"
+                android:text="772-713-1983"/>
+
+            <TextView
+                android:id="@+id/dev_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_toRightOf="@id/dev_phone"
+                android:layout_below="@id/divider_1"
+                android:text="DamosDesigns@Gmail.com"/>
+            <View
+                android:id="@+id/divider_2"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_below="@id/dev_email"
+                android:background="@color/md_grey_400"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp" />
+            <TextView
+                android:id="@+id/dev_bio_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/divider_2"
+                android:text="About the Developer"
+                android:textSize="18sp"/>
+            <TextView
+                android:id="@+id/dev_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/dev_bio_title"
+                android:text="@string/dev_description_text"/>
+            <View
+                android:id="@+id/divider_3"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_below="@id/dev_description"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp" />
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</ScrollView>

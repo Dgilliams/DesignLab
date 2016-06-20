@@ -1,4 +1,12 @@
 <resources>
-    <string name="app_name">Damos Design Lab</string>
+    <string name="app_name">Damien Gilliams: Dev for Hire</string>
     <string name="action_settings">Settings</string>
+    <string name="dev_description_text">Surrounded by bleeding edge technology and developing for the future.
+        \n\n My current focus is in Android mobile development. I\'m tinkering with the future of VR while
+        continuing to gain experience in the Android space. In the past I have developed for Chromecast,
+        Android Wear, Android games, and an Android for Auto application for BMW. I\'m currently developing internal
+        Android apps for State Farm as well as playing with the always growing list of side projects.
+        \n\nI started my own company, Damos Designs, to put myself through school without having to take out student loans.
+        I\'ve designed promotional graphics for organizations across the country.
+        \n\nMotivated. Passionate. Persistent.</string>
 </resources>

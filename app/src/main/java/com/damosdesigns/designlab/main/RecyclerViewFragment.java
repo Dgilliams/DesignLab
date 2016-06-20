@@ -27,52 +27,55 @@ import java.util.Random;
  * Created by damosdesigns on 6/19/16.
  */
 
-    public class RecyclerViewFragment extends Fragment {
+public class RecyclerViewFragment extends Fragment {
 
     private RecyclerView.Adapter mAdapter;
 
     @Nullable
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-            RecyclerView rv = (RecyclerView) inflater.inflate(
-                    R.layout.recycler_view_fragment, container, false);
-            setupRecyclerView(rv);
-            return rv;
-        }
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        RecyclerView rv = (RecyclerView) inflater.inflate(
+                R.layout.recycler_view_fragment, container, false);
+        setupRecyclerView(rv);
+        return rv;
+    }
 
-        private void setupRecyclerView(RecyclerView recyclerView) {
+    private void setupRecyclerView(RecyclerView recyclerView) {
 
-            recyclerView.setLayoutManager(new LinearLayoutManager(recyclerView.getContext()));
-            Project[] listOfProjects = new Project[3];
+        recyclerView.setLayoutManager(new LinearLayoutManager(recyclerView.getContext()));
+        Project[] listOfProjects = new Project[3];
 
-            Project businessCard = new Project("Material Design Business Card", R.color.md_purple_400);
-            businessCard.setmLogo(getContext(), R.drawable.businesscard_logo);
-            Project cowculator = new Project("Cowculator", R.color.md_amber_400);
-            Project origin = new Project("Origin", R.color.md_red_400);
+        Project businessCard = new Project("Material Design Business Card", R.color.md_purple_400);
+        businessCard.setmLogo(getContext(), R.drawable.businesscard_logo);
+        Project cowculator = new Project("Cowculator", R.color.md_amber_400);
+        cowculator.setmLogo(getContext(), R.drawable.cowculator_card_background);
+        Project origin = new Project("Origin", R.color.md_red_400);
+        origin.setmLogo(getContext(), R.drawable.origin_card_background);
 
-            listOfProjects[0] = businessCard;
-            listOfProjects[1] = cowculator;
-            listOfProjects[2] = origin;
+        listOfProjects[0] = businessCard;
+        listOfProjects[1] = cowculator;
+        listOfProjects[2] = origin;
 
-            mAdapter = new ProjectsAdapter(listOfProjects);
-            recyclerView.setAdapter(mAdapter);
-            recyclerView.addOnItemTouchListener(
-                    new RecyclerItemClickListener(getContext(), new RecyclerItemClickListener.OnItemClickListener() {
-                        @Override public void onItemClick(View view, int position) {
-                            switch (position){
-                                case 0:
-                                    //material design business card
-                                    Util.launchPlaystore(getContext(), "com.damosdesigns.damo.material_design_business_card");
-                                    break;
-                                case 1:
-                                    Util.launchPlaystore(getContext(), "com.damosdesigns.cowculatorcalculator");
-                                    break;
-                                case 2:
-                                    Util.launchPlaystore(getContext(), "com.OriginalOrigins.Origin");
-                                    break;
-                            }
+        mAdapter = new ProjectsAdapter(listOfProjects);
+        recyclerView.setAdapter(mAdapter);
+        recyclerView.addOnItemTouchListener(
+                new RecyclerItemClickListener(getContext(), new RecyclerItemClickListener.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(View view, int position) {
+                        switch (position) {
+                            case 0:
+                                //material design business card
+                                Util.launchPlaystore(getContext(), "com.damosdesigns.damo.material_design_business_card");
+                                break;
+                            case 1:
+                                Util.launchPlaystore(getContext(), "com.damosdesigns.cowculatorcalculator");
+                                break;
+                            case 2:
+                                Util.launchPlaystore(getContext(), "com.OriginalOrigins.Origin");
+                                break;
                         }
-                    })
-            );
-        }
+                    }
+                })
+        );
+    }
 }
