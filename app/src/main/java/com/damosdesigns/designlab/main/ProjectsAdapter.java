@@ -11,25 +11,28 @@ import android.widget.TextView;
 
 import com.damosdesigns.designlab.R;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 /**
  * Created by damosdesigns on 6/19/16.
  */
 public class ProjectsAdapter extends RecyclerView.Adapter<ProjectsAdapter.MyViewHolder> {
-    public Project[] getmDataset() {
+    public ArrayList<Project> getmDataset() {
         return mDataset;
     }
 
-    public void setmDataset(Project[] mDataset) {
+    public void setmDataset(ArrayList<Project> mDataset) {
         this.mDataset = mDataset;
     }
 
-    private Project[] mDataset;
+    private ArrayList<Project> mDataset;
 
-    public ProjectsAdapter(Project[] myDataset){
+    public ProjectsAdapter(ArrayList<Project> myDataset) {
         mDataset = myDataset;
     }
 
-    public static class MyViewHolder extends RecyclerView.ViewHolder{
+    public static class MyViewHolder extends RecyclerView.ViewHolder {
         public CardView mCardView;
         public TextView mTextView;
         public ImageView mBackground;
@@ -46,8 +49,6 @@ public class ProjectsAdapter extends RecyclerView.Adapter<ProjectsAdapter.MyView
     }
 
 
-
-
     @Override
     public ProjectsAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         // create a new view
@@ -60,15 +61,15 @@ public class ProjectsAdapter extends RecyclerView.Adapter<ProjectsAdapter.MyView
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int i) {
-        holder.mTextView.setText(mDataset[i].getmTitle());
-        holder.mBackground.setBackgroundColor(mDataset[i].getmBackgroundColor());
-        holder.mBackground.setBackground(mDataset[i].getmLogo());
+        holder.mTextView.setText(mDataset.get(i).getmTitle());
+        holder.mBackground.setBackgroundColor(mDataset.get(i).getmBackgroundColor());
+        holder.mBackground.setBackground(mDataset.get(i).getmLogo());
 //        holder.mRelativeLayout.setBackgroundColor(Util.returnRandomMaterialColor());
     }
 
     @Override
     public int getItemCount() {
-        return mDataset.length;
+        return mDataset.size();
     }
 
 

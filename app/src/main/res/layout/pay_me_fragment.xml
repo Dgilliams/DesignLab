@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -13,6 +13,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
+        app:cardBackgroundColor="@color/md_white_1000"
         android:padding="16dp"
         app:cardCornerRadius="4dp">
 
@@ -53,4 +54,4 @@ I'm working towards an in app ordering system where you can keep track of quotes
 
         </RelativeLayout>
     </android.support.v7.widget.CardView>
-</LinearLayout>
+</ScrollView>

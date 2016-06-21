@@ -27,7 +27,7 @@ import java.util.Random;
  * Created by damosdesigns on 6/19/16.
  */
 
-public class RecyclerViewFragment extends Fragment {
+public class ProjectFragment extends Fragment {
 
     private RecyclerView.Adapter mAdapter;
 
@@ -43,20 +43,30 @@ public class RecyclerViewFragment extends Fragment {
     private void setupRecyclerView(RecyclerView recyclerView) {
 
         recyclerView.setLayoutManager(new LinearLayoutManager(recyclerView.getContext()));
-        Project[] listOfProjects = new Project[3];
+        ArrayList<Project> projects = new ArrayList<Project>();
 
         Project businessCard = new Project("Material Design Business Card", R.color.md_purple_400);
         businessCard.setmLogo(getContext(), R.drawable.businesscard_logo);
+
         Project cowculator = new Project("Cowculator", R.color.md_amber_400);
         cowculator.setmLogo(getContext(), R.drawable.cowculator_card_background);
+
         Project origin = new Project("Origin", R.color.md_red_400);
         origin.setmLogo(getContext(), R.drawable.origin_card_background);
 
-        listOfProjects[0] = businessCard;
-        listOfProjects[1] = cowculator;
-        listOfProjects[2] = origin;
+        Project experiments = new Project("Prototypes and Experiments", R.color.md_red_400);
+        experiments.setmLogo(getContext(), R.color.md_red_400);
 
-        mAdapter = new ProjectsAdapter(listOfProjects);
+        Project dev4hire = new Project("This Application: Dev for Hire", 0);
+        dev4hire.setmLogo(getContext(), R.color.md_green_600);
+
+        projects.add(dev4hire);
+        projects.add(businessCard);
+        projects.add(cowculator);
+        projects.add(origin);
+        projects.add(experiments);
+
+        mAdapter = new ProjectsAdapter(projects);
         recyclerView.setAdapter(mAdapter);
         recyclerView.addOnItemTouchListener(
                 new RecyclerItemClickListener(getContext(), new RecyclerItemClickListener.OnItemClickListener() {
