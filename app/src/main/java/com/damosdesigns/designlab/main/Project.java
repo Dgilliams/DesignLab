@@ -13,20 +13,20 @@ public class Project {
     private String Url;
     private Drawable mLogo;
     private String mTitle;
-    private int mBackgroundColor;
+    private String mID;
 
 
-    public int getmBackgroundColor() {
-        return mBackgroundColor;
+    public String getmID() {
+        return mID;
     }
 
-    public void setmBackgroundColor(int mBackgroundColor) {
-        this.mBackgroundColor = mBackgroundColor;
+    public void setmID(String mID) {
+        this.mID = mID;
     }
 
 
-    public Project(String title, int colorID) {
-        mBackgroundColor = colorID;
+    public Project(String title, String id) {
+        mID = id;
         mTitle = title;
     }
 

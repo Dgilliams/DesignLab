@@ -111,7 +111,6 @@ public class MainActivity extends AppCompatActivity {
     private void setupViewPager(ViewPager viewPager) {
         MyAdapter adapter = new MyAdapter(getSupportFragmentManager());
         adapter.addFragment(new ProjectFragment(), "Portfolio");
-//        adapter.addFragment(new ProjectFragment(), "Experiments");
         adapter.addFragment(new TheDevFragment(), "The Dev");
         adapter.addFragment(new PayMeFragment(), "$$$");
         viewPager.setAdapter(adapter);

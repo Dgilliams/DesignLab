@@ -43,21 +43,21 @@ public class ProjectFragment extends Fragment {
     private void setupRecyclerView(RecyclerView recyclerView) {
 
         recyclerView.setLayoutManager(new LinearLayoutManager(recyclerView.getContext()));
-        ArrayList<Project> projects = new ArrayList<Project>();
+        final ArrayList<Project> projects = new ArrayList<Project>();
 
-        Project businessCard = new Project("Material Design Business Card", R.color.md_purple_400);
+        Project businessCard = new Project("Material Design Business Card", "material_card");
         businessCard.setmLogo(getContext(), R.drawable.businesscard_logo);
 
-        Project cowculator = new Project("Cowculator", R.color.md_amber_400);
+        Project cowculator = new Project("Cowculator", "cowculator");
         cowculator.setmLogo(getContext(), R.drawable.cowculator_card_background);
 
-        Project origin = new Project("Origin", R.color.md_red_400);
+        Project origin = new Project("Origin", "origin");
         origin.setmLogo(getContext(), R.drawable.origin_card_background);
 
-        Project experiments = new Project("Prototypes and Experiments", R.color.md_red_400);
+        Project experiments = new Project("Prototypes and Experiments", "prototypes");
         experiments.setmLogo(getContext(), R.color.md_red_400);
 
-        Project dev4hire = new Project("This Application: Dev for Hire", 0);
+        final Project dev4hire = new Project("This Application: Dev for Hire", "dev4hire");
         dev4hire.setmLogo(getContext(), R.color.md_green_600);
 
         projects.add(dev4hire);
@@ -72,15 +72,21 @@ public class ProjectFragment extends Fragment {
                 new RecyclerItemClickListener(getContext(), new RecyclerItemClickListener.OnItemClickListener() {
                     @Override
                     public void onItemClick(View view, int position) {
-                        switch (position) {
-                            case 0:
+                        final ArrayList<Project> proj = projects;
+                        switch (proj.get(position).getmID()) {
+                            case "dev4hire" :
+                                //Launch new activity
+                                Intent intent = new Intent(getContext(), Dev4HireActivity.class);
+                                startActivity(intent);
+                                break;
+                            case "material_card":
                                 //material design business card
                                 Util.launchPlaystore(getContext(), "com.damosdesigns.damo.material_design_business_card");
                                 break;
-                            case 1:
+                            case "cowculator":
                                 Util.launchPlaystore(getContext(), "com.damosdesigns.cowculatorcalculator");
                                 break;
-                            case 2:
+                            case "origin":
                                 Util.launchPlaystore(getContext(), "com.OriginalOrigins.Origin");
                                 break;
                         }

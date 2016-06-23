@@ -5,13 +5,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.damosdesigns.designlab.R;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
@@ -62,9 +60,7 @@ public class ProjectsAdapter extends RecyclerView.Adapter<ProjectsAdapter.MyView
     @Override
     public void onBindViewHolder(MyViewHolder holder, int i) {
         holder.mTextView.setText(mDataset.get(i).getmTitle());
-        holder.mBackground.setBackgroundColor(mDataset.get(i).getmBackgroundColor());
         holder.mBackground.setBackground(mDataset.get(i).getmLogo());
-//        holder.mRelativeLayout.setBackgroundColor(Util.returnRandomMaterialColor());
     }
 
     @Override
