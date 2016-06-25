@@ -4,6 +4,9 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.telephony.SmsManager;
+import android.widget.ExpandableListView;
+import android.widget.Toast;
 
 import com.damosdesigns.designlab.R;
 
@@ -26,4 +29,15 @@ public class Util {
        return androidColors[new Random().nextInt(androidColors.length)];
     }
 
+    public static boolean sendSMS(Context context, String phoneNumber, String msg){
+        try{
+            SmsManager smsManager = SmsManager.getDefault();
+            smsManager.sendTextMessage(phoneNumber, null, msg, null, null);
+            Toast.makeText(context, "Carrier Pidgeon sent to Damo", Toast.LENGTH_LONG).show();
+            return true;
+        } catch (Exception e) {
+            Toast.makeText(context, "Dearest Apologies, message not sendable", Toast.LENGTH_LONG).show();
+            return false;
+        }
+    }
 }

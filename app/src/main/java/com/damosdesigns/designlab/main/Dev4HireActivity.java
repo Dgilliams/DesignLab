@@ -3,14 +3,14 @@ package com.damosdesigns.designlab.main;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.damosdesigns.designlab.R;
 
-public class Dev4HireActivity extends AppCompatActivity {
+public class Dev4HireActivity extends DesignLabBaseActivity {
 
+    final Dev4HireActivity mActivity = this;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,8 +22,8 @@ public class Dev4HireActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Snackbar.make(findViewById(R.id.content_dev4_hire), "Check for SMS Permission", Snackbar.LENGTH_LONG);
+                PermissionUtils.checkForSEND_SMSPermission(mActivity);
             }
         });
     }
