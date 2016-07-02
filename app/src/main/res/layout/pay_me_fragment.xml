@@ -1,45 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".main.MainActivity">
 
-    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/dev_card"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        app:cardBackgroundColor="@color/md_white_1000"
-        android:padding="16dp"
-        app:cardCornerRadius="4dp">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <RelativeLayout
-            android:id="@+id/dev_card_relative_layout"
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="16dp">
+            android:padding="16dp"
+            android:text="Send me a message!"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
-            <ImageView
-                android:paddingBottom="16dp"
-                android:paddingEnd="16dp"
-                android:paddingStart="16dp"
-                android:paddingTop="0dp"
-                android:id="@+id/bag_of_money"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/cash"
-                android:layout_centerHorizontal="true"/>
+        <include layout="@layout/request_a_quote" />
 
-            <TextView
-                android:layout_below="@id/bag_of_money"
-                android:id="@+id/dev_name"
-                android:layout_width="wrap_content"
+        <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/dev_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:padding="16dp"
+            android:visibility="gone"
+            app:cardBackgroundColor="@color/md_white_1000"
+            app:cardCornerRadius="4dp">
+
+            <RelativeLayout
+                android:id="@+id/dev_card_relative_layout"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="This will soon be a tab where you can donate lots of money towards my development efforts.
+                android:padding="16dp">
+
+                <ImageView
+                    android:id="@+id/bag_of_money"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:paddingBottom="16dp"
+                    android:paddingEnd="16dp"
+                    android:paddingStart="16dp"
+                    android:paddingTop="0dp"
+                    android:src="@drawable/cash" />
+
+                <TextView
+                    android:id="@+id/dev_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/bag_of_money"
+                    android:text="This will soon be a tab where you can donate lots of money towards my development efforts.
 
 It will also give you access to request a quote for the following from within the app:
 \n\n
@@ -49,9 +68,62 @@ It will also give you access to request a quote for the following from within th
 \n- Graphic Design
 \n\n
 I'm working towards an in app ordering system where you can keep track of quotes and receive messages."
-                android:textSize="18sp" />
+                    android:textSize="18sp" />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/request_quote_card_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_margin="@dimen/fab_margin"
+            android:src="@android:drawable/ic_dialog_email"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="Let's Connect!"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/linkedin_fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/fab_margin"
+                android:backgroundTint="@color/md_blue_500"
+                android:src="@drawable/linkedin_ic"
+                android:tint="@color/md_white_1000" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/venmo_fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/fab_margin"
+                android:backgroundTint="@color/md_blue_300"
+                android:src="@drawable/venmo"
+                android:tint="@color/md_white_1000" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/phone_fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/fab_margin"
+                android:src="@android:drawable/stat_sys_phone_call"
+                android:tint="@color/md_white_1000" />
+
+        </LinearLayout>
 
 
-        </RelativeLayout>
-    </android.support.v7.widget.CardView>
-</ScrollView>
+    </LinearLayout>
+
+
+</android.support.v4.widget.NestedScrollView>

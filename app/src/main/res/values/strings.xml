@@ -105,4 +105,5 @@
         "application that also showcases my previous applications.
 
     </string>
+    <string name="title_activity_send_kisses">SendKissesActivity</string>
 </resources>

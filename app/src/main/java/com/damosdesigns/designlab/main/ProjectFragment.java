@@ -1,27 +1,18 @@
 package com.damosdesigns.designlab.main;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.res.Resources;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.damosdesigns.designlab.R;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
 
 /**
  * Created by damosdesigns on 6/19/16.
@@ -54,8 +45,8 @@ public class ProjectFragment extends Fragment {
         Project origin = new Project("Origin", "origin");
         origin.setmLogo(getContext(), R.drawable.origin_card_background);
 
-        Project experiments = new Project("Prototypes and Experiments", "prototypes");
-        experiments.setmLogo(getContext(), R.color.md_red_400);
+        Project sendLindseyKisses = new Project("Send Lindsey Kisses", "send_kisses");
+        sendLindseyKisses.setmLogo(getContext(), R.color.md_red_400);
 
         final Project dev4hire = new Project("This Application: Dev for Hire", "dev4hire");
         dev4hire.setmLogo(getContext(), R.color.md_green_600);
@@ -64,7 +55,7 @@ public class ProjectFragment extends Fragment {
         projects.add(businessCard);
         projects.add(cowculator);
         projects.add(origin);
-        projects.add(experiments);
+        projects.add(sendLindseyKisses);
 
         mAdapter = new ProjectsAdapter(projects);
         recyclerView.setAdapter(mAdapter);
@@ -88,6 +79,10 @@ public class ProjectFragment extends Fragment {
                                 break;
                             case "origin":
                                 Util.launchPlaystore(getContext(), "com.OriginalOrigins.Origin");
+                                break;
+                            case "send_kisses":
+//                                Intent intent_to_kiss_a_cutie = new Intent(getContext(), SendKissesActivity.class);
+//                                startActivity(intent_to_kiss_a_cutie);
                                 break;
                         }
                     }

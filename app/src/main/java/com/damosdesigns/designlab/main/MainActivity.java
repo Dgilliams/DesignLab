@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
         if (viewPager != null) {
             setupViewPager(viewPager);
+            viewPager.setCurrentItem(1);
         }
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -111,8 +112,8 @@ public class MainActivity extends AppCompatActivity {
     private void setupViewPager(ViewPager viewPager) {
         MyAdapter adapter = new MyAdapter(getSupportFragmentManager());
         adapter.addFragment(new ProjectFragment(), "Portfolio");
-        adapter.addFragment(new TheDevFragment(), "The Dev");
         adapter.addFragment(new PayMeFragment(), "$$$");
+        adapter.addFragment(new TheDevFragment(), "The Dev");
         viewPager.setAdapter(adapter);
     }
 
