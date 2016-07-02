@@ -51,11 +51,11 @@ public class ProjectFragment extends Fragment {
         final Project dev4hire = new Project("This Application: Dev for Hire", "dev4hire");
         dev4hire.setmLogo(getContext(), R.color.md_green_600);
 
-        projects.add(dev4hire);
+//        projects.add(dev4hire);
         projects.add(businessCard);
         projects.add(cowculator);
         projects.add(origin);
-        projects.add(sendLindseyKisses);
+//        projects.add(sendLindseyKisses);
 
         mAdapter = new ProjectsAdapter(projects);
         recyclerView.setAdapter(mAdapter);

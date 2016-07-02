@@ -67,9 +67,8 @@ public class PayMeFragment extends Fragment {
                 vibe = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
                 vibe.vibrate(500);
                 checkPhoneCallPermission(getActivity());
-                if (mHasCallPermission) {
-                    Util.dialNumber(getContext());
-                }
+                Util.dialNumber(getContext());
+
             }
         });
         FloatingActionButton linkedIn_fab = (FloatingActionButton) mRoot.findViewById(R.id.linkedin_fab);
@@ -82,6 +81,16 @@ public class PayMeFragment extends Fragment {
             }
         });
 
+
+        FloatingActionButton email_fab = (FloatingActionButton) mRoot.findViewById(R.id.email_fab);
+        email_fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                vibe = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
+                vibe.vibrate(500);
+                Util.sendEmail(getContext());
+            }
+        });
 
         FloatingActionButton fab = (FloatingActionButton) mRoot.findViewById(R.id.request_quote_card_fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -97,11 +106,13 @@ public class PayMeFragment extends Fragment {
                         Util.sendSMS(getContext(), "7727131983", "Message: Dev Opportunity from that app you made. From: Anonymous");
                     }
                 } else {
+                    checkSMSPermission(getActivity());
                     Toast.makeText(getContext(), "Permission to send SMS is disabled. Re-enable it in settings.", Toast.LENGTH_SHORT).show();
                 }
             }
         });
 
+        mRequesterName.requestFocus();
 
         return mRoot;
 
@@ -152,6 +163,10 @@ public class PayMeFragment extends Fragment {
                 // Show an expanation to the user *asynchronously* -- don't block
                 // this thread waiting for the user's response! After the user
                 // sees the explanation, try again to request the permission.
+
+                ActivityCompat.requestPermissions(activity,
+                        new String[]{Manifest.permission.SEND_SMS},
+                        SMS_PERMISSION_REQUEST_CODE);
 
             } else {
 

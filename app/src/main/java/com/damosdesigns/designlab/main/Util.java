@@ -30,14 +30,24 @@ public class Util {
         }
     }
 
-    public static int returnRandomMaterialColor(Context context){
+    public static int returnRandomMaterialColor(Context context) {
         int[] androidColors = context.getResources().getIntArray(R.array.random_material_colors);
-       return androidColors[new Random().nextInt(androidColors.length)];
+        return androidColors[new Random().nextInt(androidColors.length)];
     }
 
     public static void dialNumber(Context context) {
         Intent callIntent = new Intent(Intent.ACTION_CALL);
         callIntent.setData(Uri.parse("tel:7727131983"));
+        //permission checked already
+        if (ActivityCompat.checkSelfPermission(context, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+            // Consider calling   ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
         context.startActivity(callIntent);
     }
 
@@ -60,6 +70,19 @@ public class Util {
             intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.linkedin.com/profile/view?id=damien-gilliams-2b178389"));
         }
         context.startActivity(intent);
+    }
+
+    public static void sendEmail(Context context){
+        Intent i = new Intent(Intent.ACTION_SEND);
+        i.setType("message/rfc822");
+        i.putExtra(Intent.EXTRA_EMAIL  , new String[]{"DamosDesigns@Gmail.com"});
+        i.putExtra(Intent.EXTRA_SUBJECT, "I need an Android Developer!");
+//        i.putExtra(Intent.EXTRA_TEXT   , "body of email");
+        try {
+            context.startActivity(Intent.createChooser(i, "Send mail..."));
+        } catch (android.content.ActivityNotFoundException ex) {
+            Toast.makeText(context, "Sorry! There are no email clients installed.", Toast.LENGTH_SHORT).show();
+        }
     }
 
     public static boolean sendSMS(Context context, String phoneNumber, String msg) {
