@@ -32,7 +32,6 @@
             android:hint="- Anonymous "
             android:maxLines="1"
             android:textAlignment="textEnd"
-
             />
 
         <android.support.design.widget.FloatingActionButton

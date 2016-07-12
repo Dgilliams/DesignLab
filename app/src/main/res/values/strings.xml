@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">Dev For Hire</string>
+    <string name="app_name">Android Developer For Hire</string>
     <string name="action_settings">Nothing Fun Here Yet!</string>
-    <string name="main_activity_name">Damien Gilliams: Dev for Hire</string>
+    <string name="main_activity_name">Android Developer for Hire</string>
     <string name="dev_description_text">Surrounded by bleeding edge technology and developing for the future.
         \n\n My current focus is in Android mobile development. I\'m tinkering with the future of VR while
         continuing to gain experience in the Android space. In the past I have developed for Chromecast,
